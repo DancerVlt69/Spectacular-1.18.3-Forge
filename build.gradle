@@ -1,29 +1,31 @@
 buildscript {
-    repositories {
-        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-    }
+
+    // the repositories entries now you will find in the file 'settings.gradle'
+
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
     }
 }
+
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 plugins {
-    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '5.1.+'
     id 'maven-publish'
+    id 'eclipse'
 }
-apply plugin: 'net.minecraftforge.gradle'
-
 
 version = '0.0.1-1.18.2'
-group = 'net.spring.spectacular' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'spectacular'
+group = 'net.spring' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 
-// Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+java {
+    archivesBaseName = 'spectacular'
 
-println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+    // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+}
+
+// println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+
 minecraft {
     // The mappings can be changed at any time and must be in the following format.
     // Channel:   Version:
