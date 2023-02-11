@@ -1,5 +1,6 @@
 modLoader = "javafml"
-loaderVersion = "[40.2,)"
+loaderVersion = "[40,)"
+license = "GNU 3.0"
 
 [[mods]]
 modId = "spectacular"
@@ -10,13 +11,13 @@ description = "Un mod simple d'exemple pour Minecraft"
 [[dependencies.spectacular]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.18.2]"
+versionRange = "[1.18,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.spectacular]]
 modId = "forge"
 mandatory = true
-versionRange = "[40.2,)"
+versionRange = "[40,)"
 ordering = "NONE"
 side = "BOTH"
